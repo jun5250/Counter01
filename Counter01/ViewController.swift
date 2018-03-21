@@ -9,17 +9,36 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var cl=0
+    var value = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBOutlet weak var lbl_count: UILabel!
+    
+    @IBAction func btn_tap(_ sender: Any) {
+        value = value + 1
+        lbl_count.text = String(value)
     }
-
-
+    @IBAction func btn_reset(_ sender: Any) {
+        value = 0
+        lbl_count.text = String(value)
+    }
+    
+    @IBAction func btn_color(_ sender: Any) {
+        if cl == 1 {
+            view.backgroundColor = UIColor.green
+            cl=0
+            
+        } else {
+            view.backgroundColor = UIColor.yellow
+            cl = 1 }
+    }
+    
 }
 
